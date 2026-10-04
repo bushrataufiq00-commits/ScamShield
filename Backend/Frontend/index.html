@@ -1213,14 +1213,14 @@ async function analyze() {
     if (currentMode === "url") {
 
         endpoint =
-            "http://127.0.0.1:8000/analyze/url?url=" +
+            "https://scamshield-api-5pj5.onrender.com/analyze/url?url=" +
             encodeURIComponent(input);
 
     }
     else {
 
         endpoint =
-            "http://127.0.0.1:8000/analyze/message?message=" +
+            "https://scamshield-api-5pj5.onrender.com/analyze/message?message=" +
             encodeURIComponent(input);
 
     }
