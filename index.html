@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,29 +29,55 @@
 
             --text: #e6edf3;
             --muted: #718096;
+            --muted-light: #9aa9b6;
         }
+
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
 
         body {
             min-height: 100vh;
-            font-family: "Courier New", monospace;
+
+            font-family:
+                "Courier New",
+                monospace;
+
             background:
                 radial-gradient(
                     circle at 50% -20%,
-                    rgba(0, 229, 255, 0.12),
-                    transparent 45%
+                    rgba(0, 229, 255, 0.13),
+                    transparent 42%
                 ),
-                #05080d;
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(0, 255, 157, 0.035),
+                    transparent 35%
+                ),
+                var(--bg);
+
             color: var(--text);
+
             overflow-x: hidden;
         }
 
 
-        /* GRID BACKGROUND */
+        /* GRID */
 
         body::before {
+
             content: "";
+
             position: fixed;
+
             inset: 0;
+
             pointer-events: none;
 
             background-image:
@@ -68,70 +93,94 @@
 
             background-size: 40px 40px;
 
-            mask-image: linear-gradient(
-                to bottom,
-                black,
-                transparent 85%
-            );
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+
+            z-index: 0;
         }
 
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         .header {
-            height: 76px;
+
+            height: 72px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 0 7%;
 
-            background: rgba(5, 8, 13, 0.9);
+            background:
+                rgba(5, 8, 13, 0.88);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
             position: relative;
-            z-index: 2;
 
-            backdrop-filter: blur(10px);
+            z-index: 5;
+
+            backdrop-filter: blur(14px);
         }
 
 
         .logo {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
-            font-size: 22px;
+            font-size: 20px;
+
             font-weight: bold;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
 
         .shield {
+
             width: 38px;
+
             height: 38px;
 
             display: grid;
+
             place-items: center;
 
-            border: 1px solid var(--cyan);
+            border:
+                1px solid var(--cyan);
 
             color: var(--cyan);
 
-            box-shadow:
-                0 0 12px rgba(0, 229, 255, 0.25);
+            background:
+                rgba(0, 229, 255, 0.04);
 
-            clip-path: polygon(
-                50% 0%,
-                90% 18%,
-                90% 58%,
-                50% 100%,
-                10% 58%,
-                10% 18%
-            );
+            box-shadow:
+                0 0 18px
+                rgba(0, 229, 255, 0.18);
+
+            clip-path:
+                polygon(
+                    50% 0%,
+                    90% 18%,
+                    90% 58%,
+                    50% 100%,
+                    10% 58%,
+                    10% 18%
+                );
         }
 
 
@@ -141,683 +190,1521 @@
 
 
         .system-status {
+
             display: flex;
+
             align-items: center;
+
             gap: 9px;
 
-            font-size: 11px;
+            font-size: 10px;
+
             color: var(--muted);
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+
+            width: 7px;
+
+            height: 7px;
 
             border-radius: 50%;
 
             background: var(--green);
 
             box-shadow:
-                0 0 8px var(--green);
+                0 0 10px var(--green);
 
-            animation: pulse 1.8s infinite;
+            animation:
+                pulse 1.8s infinite;
         }
 
 
         @keyframes pulse {
 
-            0%, 100% {
+            0%,
+            100% {
                 opacity: 1;
             }
 
             50% {
-                opacity: 0.35;
+                opacity: 0.3;
             }
 
         }
 
 
-        /* MAIN */
+        /* =========================
+           MAIN
+        ========================= */
 
         .container {
-            width: min(1000px, 92%);
 
-            margin: auto;
+            width:
+                min(1000px, 92%);
 
-            padding: 70px 0 50px;
+            margin:
+                auto;
 
-            position: relative;
-            z-index: 1;
+            padding:
+                72px 0 55px;
+
+            position:
+                relative;
+
+            z-index:
+                1;
         }
 
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            text-align: center;
 
-            margin-bottom: 50px;
+            text-align:
+                center;
+
+            margin-bottom:
+                48px;
         }
 
 
         .terminal-label {
-            color: var(--green);
 
-            font-size: 12px;
+            display:
+                inline-block;
 
-            letter-spacing: 2px;
+            color:
+                var(--green);
 
-            margin-bottom: 18px;
+            font-size:
+                11px;
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                17px;
+
+            padding:
+                7px 12px;
+
+            border:
+                1px solid
+                rgba(0, 255, 157, 0.18);
+
+            background:
+                rgba(0, 255, 157, 0.025);
         }
 
 
         .hero h1 {
-            font-family: Arial, sans-serif;
 
-            font-size: clamp(38px, 6vw, 68px);
+            font-family:
+                Arial,
+                sans-serif;
 
-            letter-spacing: -2px;
+            font-size:
+                clamp(38px, 6vw, 64px);
 
-            margin-bottom: 18px;
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2.5px;
+
+            margin-bottom:
+                20px;
         }
 
 
         .hero h1 span {
-            color: var(--cyan);
+
+            color:
+                var(--cyan);
 
             text-shadow:
-                0 0 25px rgba(0, 229, 255, 0.35);
+                0 0 25px
+                rgba(0, 229, 255, 0.32);
         }
 
 
         .hero p {
-            max-width: 650px;
 
-            margin: auto;
+            max-width:
+                650px;
 
-            color: var(--muted);
+            margin:
+                auto;
 
-            font-family: Arial, sans-serif;
+            color:
+                var(--muted);
 
-            line-height: 1.7;
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
         }
 
 
-        /* MAIN CARD */
+        /* =========================
+           SCANNER
+        ========================= */
 
         .scanner {
-            background: rgba(10, 16, 24, 0.92);
 
-            border: 1px solid var(--border);
+            background:
+                rgba(10, 16, 24, 0.94);
+
+            border:
+                1px solid
+                var(--border);
 
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.45);
+                0 30px 80px
+                rgba(0, 0, 0, 0.48);
 
-            position: relative;
+            position:
+                relative;
+
+            overflow:
+                hidden;
         }
 
 
         .scanner::before {
-            content: "";
 
-            position: absolute;
+            content:
+                "";
 
-            top: -1px;
-            left: 15%;
-            right: 15%;
+            position:
+                absolute;
 
-            height: 1px;
+            top:
+                0;
 
-            background: var(--cyan);
+            left:
+                20%;
+
+            right:
+                20%;
+
+            height:
+                1px;
+
+            background:
+                var(--cyan);
 
             box-shadow:
-                0 0 15px var(--cyan);
+                0 0 18px
+                var(--cyan);
         }
 
 
-        /* CARD HEADER */
+        /* =========================
+           TERMINAL HEADER
+        ========================= */
 
         .scanner-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
 
-            padding: 15px 20px;
+            display:
+                flex;
 
-            border-bottom: 1px solid var(--border);
+            justify-content:
+                space-between;
 
-            color: var(--muted);
+            align-items:
+                center;
 
-            font-size: 11px;
+            padding:
+                14px 20px;
 
-            letter-spacing: 1px;
+            border-bottom:
+                1px solid
+                var(--border);
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1.5px;
         }
 
 
         .window-buttons {
-            display: flex;
-            gap: 6px;
+
+            display:
+                flex;
+
+            gap:
+                6px;
         }
 
 
         .window-buttons span {
-            width: 7px;
-            height: 7px;
 
-            border-radius: 50%;
+            width:
+                7px;
 
-            background: var(--border);
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--border);
         }
 
 
-        /* INPUT */
+        /* =========================
+           SCANNER BODY
+        ========================= */
 
         .scanner-body {
-            padding: 28px;
+
+            padding:
+                30px;
         }
 
 
+        /* =========================
+           MODE BUTTONS
+        ========================= */
+
         .mode-buttons {
-            display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            display:
+                grid;
 
-            gap: 8px;
+            grid-template-columns:
+                1fr 1fr;
 
-            margin-bottom: 18px;
+            gap:
+                8px;
+
+            margin-bottom:
+                22px;
         }
 
 
         .mode-buttons button {
-            margin: 0;
 
-            padding: 13px;
+            padding:
+                14px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
-            background: #070c12;
+            background:
+                #070c12;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
-            font-family: inherit;
+            font-family:
+                inherit;
 
-            font-size: 12px;
+            font-size:
+                11px;
 
-            letter-spacing: 1px;
+            letter-spacing:
+                1px;
 
-            cursor: pointer;
+            cursor:
+                pointer;
 
-            transition: 0.25s;
+            transition:
+                0.25s;
         }
 
 
         .mode-buttons button:hover {
-            border-color: var(--cyan);
-            color: var(--cyan);
+
+            border-color:
+                var(--cyan);
+
+            color:
+                var(--cyan);
         }
 
 
         .mode-buttons button.active {
-            border-color: var(--cyan);
 
-            background: rgba(0, 229, 255, 0.08);
+            border-color:
+                var(--cyan);
 
-            color: var(--cyan);
+            background:
+                rgba(0, 229, 255, 0.07);
+
+            color:
+                var(--cyan);
 
             box-shadow:
-                inset 0 -2px 0 var(--cyan),
-                0 0 15px rgba(0, 229, 255, 0.06);
+                inset 0 -2px 0 var(--cyan);
         }
 
 
+        /* =========================
+           INPUT
+        ========================= */
+
         .input-label {
-            color: var(--green);
 
-            font-size: 11px;
+            color:
+                var(--green);
 
-            margin-bottom: 8px;
+            font-size:
+                10px;
 
-            letter-spacing: 1px;
+            margin-bottom:
+                8px;
+
+            letter-spacing:
+                1.5px;
         }
 
 
         textarea {
-            width: 100%;
 
-            min-height: 180px;
+            width:
+                100%;
 
-            resize: vertical;
+            min-height:
+                175px;
 
-            padding: 18px;
+            resize:
+                vertical;
 
-            background: #05090e;
+            padding:
+                18px;
 
-            border: 1px solid var(--border);
+            background:
+                #05090e;
 
-            color: var(--text);
+            border:
+                1px solid
+                var(--border);
 
-            font-family: "Courier New", monospace;
+            color:
+                var(--text);
 
-            font-size: 14px;
+            font-family:
+                "Courier New",
+                monospace;
 
-            line-height: 1.7;
+            font-size:
+                13px;
 
-            outline: none;
+            line-height:
+                1.7;
 
-            transition: 0.25s;
+            outline:
+                none;
+
+            transition:
+                0.25s;
         }
 
 
         textarea::placeholder {
-            color: #3d4b58;
+            color:
+                #3d4b58;
         }
 
 
         textarea:focus {
-            border-color: var(--cyan);
+
+            border-color:
+                var(--cyan);
 
             box-shadow:
-                0 0 20px rgba(0, 229, 255, 0.08);
+                0 0 25px
+                rgba(0, 229, 255, 0.08);
         }
 
 
-        /* ANALYZE BUTTON */
+        /* =========================
+           ANALYZE BUTTON
+        ========================= */
 
         .analyze-button {
-            width: 100%;
 
-            margin-top: 15px;
+            width:
+                100%;
 
-            padding: 16px;
+            margin-top:
+                14px;
 
-            border: 1px solid var(--cyan);
+            padding:
+                16px;
 
-            background: rgba(0, 229, 255, 0.08);
+            border:
+                1px solid
+                var(--cyan);
 
-            color: var(--cyan);
+            background:
+                rgba(0, 229, 255, 0.07);
 
-            font-family: inherit;
+            color:
+                var(--cyan);
 
-            font-weight: bold;
+            font-family:
+                inherit;
 
-            font-size: 13px;
+            font-weight:
+                bold;
 
-            letter-spacing: 2px;
+            font-size:
+                12px;
 
-            cursor: pointer;
+            letter-spacing:
+                2px;
 
-            transition: 0.25s;
+            cursor:
+                pointer;
+
+            transition:
+                0.25s;
         }
 
 
         .analyze-button:hover {
-            background: var(--cyan);
 
-            color: #020508;
+            background:
+                var(--cyan);
+
+            color:
+                #020508;
 
             box-shadow:
-                0 0 25px rgba(0, 229, 255, 0.35);
+                0 0 25px
+                rgba(0, 229, 255, 0.3);
         }
 
 
-        .analyze-button:active {
-            transform: scale(0.99);
+        .analyze-button:disabled {
+
+            opacity:
+                0.6;
+
+            cursor:
+                wait;
         }
 
 
-        /* RESULT */
+        /* =========================
+           RESULT
+        ========================= */
 
         .result-box {
-            display: none;
 
-            margin-top: 25px;
+            display:
+                none;
 
-            padding: 25px;
+            margin-top:
+                28px;
 
-            background: #070c12;
+            background:
+                #070c12;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
-            position: relative;
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            animation:
+                resultAppear 0.45s ease;
         }
 
 
+        @keyframes resultAppear {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(10px);
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* TOP STATUS */
+
         .result-top {
-            display: flex;
 
-            align-items: center;
+            display:
+                flex;
 
-            justify-content: space-between;
+            align-items:
+                center;
 
-            gap: 20px;
+            justify-content:
+                space-between;
 
-            margin-bottom: 25px;
+            gap:
+                25px;
+
+            padding:
+                28px;
+
+            border-bottom:
+                1px solid
+                var(--border);
         }
 
 
         .result-status {
-            display: flex;
 
-            align-items: center;
+            display:
+                flex;
 
-            gap: 12px;
+            align-items:
+                center;
+
+            gap:
+                14px;
         }
 
 
         .risk-indicator {
-            width: 12px;
-            height: 12px;
 
-            border-radius: 50%;
+            width:
+                13px;
 
-            box-shadow: 0 0 12px currentColor;
+            height:
+                13px;
+
+            min-width:
+                13px;
+
+            border-radius:
+                50%;
+
+            box-shadow:
+                0 0 15px
+                currentColor;
         }
 
 
         .result-box h2 {
-            font-family: Arial, sans-serif;
 
-            font-size: 25px;
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                27px;
+
+            line-height:
+                1;
         }
 
 
+        #riskDescription {
+
+            margin-top:
+                7px;
+
+            color:
+                var(--muted);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.5;
+        }
+
+
+        /* SCORE */
+
         .score-number {
-            font-size: 12px;
 
-            color: var(--muted);
+            min-width:
+                125px;
 
-            text-align: right;
+            text-align:
+                right;
+
+            color:
+                var(--muted);
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                1.5px;
         }
 
 
         .score-number strong {
-            display: block;
 
-            font-size: 25px;
+            display:
+                block;
 
-            color: var(--text);
+            margin-top:
+                3px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                32px;
+
+            line-height:
+                1;
+
+            color:
+                var(--text);
+
+            letter-spacing:
+                -1px;
+        }
+
+
+        .score-number strong::after {
+
+            content:
+                "/100";
+
+            font-size:
+                13px;
+
+            color:
+                var(--muted);
+
+            letter-spacing:
+                0;
+
+            margin-left:
+                3px;
+        }
+
+
+        /* SCORE BAR */
+
+        .score-section {
+
+            padding:
+                20px 28px 0;
         }
 
 
         .score-bar {
-            width: 100%;
 
-            height: 7px;
+            width:
+                100%;
 
-            background: #151e28;
+            height:
+                8px;
 
-            overflow: hidden;
+            background:
+                #151e28;
 
-            margin-bottom: 25px;
+            overflow:
+                hidden;
+
+            border-radius:
+                10px;
         }
 
 
         #scoreFill {
-            height: 100%;
 
-            width: 0%;
+            height:
+                100%;
+
+            width:
+                0%;
+
+            border-radius:
+                10px;
 
             transition:
-                width 0.8s ease;
+                width 0.9s ease;
         }
 
 
         /* RESULT COLORS */
 
         .result-box.safe {
-            border-color: rgba(0, 255, 157, 0.35);
+            border-color:
+                rgba(0, 255, 157, 0.4);
         }
 
 
         .result-box.suspicious {
-            border-color: rgba(255, 196, 0, 0.35);
+            border-color:
+                rgba(255, 196, 0, 0.45);
         }
 
 
         .result-box.scam {
-            border-color: rgba(255, 59, 92, 0.4);
+            border-color:
+                rgba(255, 59, 92, 0.5);
+
+            box-shadow:
+                0 15px 50px
+                rgba(255, 59, 92, 0.06);
         }
 
 
-        /* REASONS */
+        /* =========================
+           RESULT CONTENT GRID
+        ========================= */
+
+        .result-content {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                18px;
+
+            padding:
+                25px 28px 28px;
+        }
+
+
+        .result-section {
+
+            background:
+                rgba(255,255,255,0.015);
+
+            border:
+                1px solid
+                var(--border);
+
+            padding:
+                18px;
+        }
+
 
         .section-title {
-            font-size: 11px;
 
-            color: var(--cyan);
+            font-size:
+                10px;
 
-            letter-spacing: 1px;
+            color:
+                var(--cyan);
 
-            margin-bottom: 12px;
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                13px;
         }
 
 
+        /* =========================
+           INDICATORS
+        ========================= */
+
         .reasons ul {
-            list-style: none;
+
+            list-style:
+                none;
         }
 
 
         .reasons li {
-            padding: 10px 12px;
 
-            margin-bottom: 7px;
+            padding:
+                11px 12px;
 
-            background: #0b131d;
+            margin-bottom:
+                7px;
 
-            border-left: 2px solid var(--cyan);
+            background:
+                #0b131d;
 
-            color: #a9b6c2;
+            border:
+                1px solid
+                rgba(255,255,255,0.025);
 
-            font-size: 12px;
+            border-left:
+                2px solid
+                var(--red);
+
+            color:
+                #a9b6c2;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.4;
         }
 
 
         .reasons li::before {
-            content: "› ";
 
-            color: var(--cyan);
+            content:
+                "› ";
+
+            color:
+                var(--red);
+
+            font-weight:
+                bold;
         }
 
 
-        /* SAFETY */
+        /* =========================
+           SAFETY
+        ========================= */
 
         .safety-advice {
-            margin-top: 22px;
 
-            padding: 18px;
+            border:
+                1px solid
+                rgba(0, 255, 157, 0.15);
 
-            background: rgba(0, 255, 157, 0.035);
+            border-left:
+                3px solid
+                var(--green);
 
-            border: 1px solid rgba(0, 255, 157, 0.15);
+            background:
+                rgba(0, 255, 157, 0.025);
 
-            border-left: 3px solid var(--green);
+            padding:
+                18px;
         }
 
 
         .safety-advice h3 {
-            color: var(--green);
 
-            font-size: 11px;
+            color:
+                var(--green);
 
-            letter-spacing: 1px;
+            font-size:
+                10px;
 
-            margin-bottom: 10px;
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                12px;
         }
 
 
         .safety-advice p {
-            color: #9ba9b5;
 
-            font-family: Arial, sans-serif;
+            color:
+                #9ba9b5;
 
-            font-size: 13px;
+            font-family:
+                Arial,
+                sans-serif;
 
-            line-height: 1.6;
+            font-size:
+                12px;
+
+            line-height:
+                1.7;
         }
 
 
-        /* AI */
+        /* =========================
+           AI PANEL
+        ========================= */
 
         .ai-analysis {
-            margin-top: 25px;
 
-            padding: 22px;
+            display:
+                none;
 
-            background: #060b11;
+            margin-top:
+                20px;
 
-            border: 1px solid rgba(0, 229, 255, 0.25);
+            padding:
+                22px;
 
-            position: relative;
+            background:
+                #060b11;
+
+            border:
+                1px solid
+                rgba(0, 229, 255, 0.25);
+
+            position:
+                relative;
+
+            animation:
+                resultAppear 0.45s ease;
         }
 
 
         .ai-analysis::before {
-            content: "AI CORE";
 
-            position: absolute;
+            content:
+                "AI CORE";
 
-            top: -8px;
-            left: 18px;
+            position:
+                absolute;
 
-            padding: 0 8px;
+            top:
+                -7px;
 
-            background: #060b11;
+            left:
+                18px;
 
-            color: var(--cyan);
+            padding:
+                0 8px;
 
-            font-size: 9px;
+            background:
+                #060b11;
 
-            letter-spacing: 2px;
+            color:
+                var(--cyan);
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                2px;
         }
 
 
         .ai-analysis h3 {
-            color: var(--cyan);
 
-            font-size: 12px;
+            color:
+                var(--cyan);
 
-            letter-spacing: 1px;
+            font-size:
+                11px;
 
-            margin-bottom: 15px;
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                15px;
         }
 
 
         #aiAnalysis {
-            color: #9ba9b5;
 
-            font-family: Arial, sans-serif;
+            color:
+                #9ba9b5;
 
-            font-size: 13px;
+            font-family:
+                Arial,
+                sans-serif;
 
-            line-height: 1.7;
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
         }
 
 
         #aiAnalysis strong {
-            color: var(--text);
+            color:
+                var(--text);
         }
 
 
-        /* LOADING */
+        #aiAnalysis h4 {
+
+            color:
+                var(--cyan);
+
+            margin:
+                12px 0 5px;
+
+            font-size:
+                12px;
+        }
+
+
+        /* =========================
+           LOADING
+        ========================= */
 
         .ai-loading {
-            display: flex;
 
-            align-items: center;
+            display:
+                flex;
 
-            gap: 8px;
+            align-items:
+                center;
 
-            color: var(--cyan);
+            gap:
+                8px;
 
-            font-family: "Courier New", monospace;
+            color:
+                var(--cyan);
 
-            font-size: 12px;
+            font-size:
+                11px;
         }
 
 
         .loading-dot {
-            width: 6px;
-            height: 6px;
 
-            border-radius: 50%;
+            width:
+                6px;
 
-            background: var(--cyan);
+            height:
+                6px;
 
-            animation: loading 1.2s infinite;
+            border-radius:
+                50%;
+
+            background:
+                var(--cyan);
+
+            animation:
+                loading 1.2s infinite;
         }
 
 
         .loading-dot:nth-child(2) {
-            animation-delay: 0.2s;
+            animation-delay:
+                0.2s;
         }
 
 
         .loading-dot:nth-child(3) {
-            animation-delay: 0.4s;
+            animation-delay:
+                0.4s;
         }
 
 
         @keyframes loading {
 
-            0%, 100% {
-                opacity: 0.2;
+            0%,
+            100% {
+                opacity:
+                    0.2;
             }
 
             50% {
-                opacity: 1;
+                opacity:
+                    1;
             }
 
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer {
-            text-align: center;
 
-            margin-top: 35px;
+            text-align:
+                center;
 
-            color: #3f4d59;
+            margin-top:
+                35px;
 
-            font-size: 10px;
+            color:
+                #3f4d59;
 
-            letter-spacing: 1px;
+            font-size:
+                9px;
 
-            line-height: 1.7;
+            letter-spacing:
+                1px;
+
+            line-height:
+                1.8;
         }
 
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
             .header {
-                padding: 0 5%;
+
+                padding:
+                    0 5%;
             }
+
 
             .system-status {
-                display: none;
+                display:
+                    none;
             }
+
 
             .container {
-                padding-top: 45px;
+
+                padding-top:
+                    45px;
             }
+
 
             .scanner-body {
-                padding: 18px;
+
+                padding:
+                    18px;
             }
+
 
             .result-top {
-                align-items: flex-start;
+
+                align-items:
+                    flex-start;
+
+                padding:
+                    22px;
+
+                flex-direction:
+                    column;
             }
+
+
+            .score-number {
+
+                text-align:
+                    left;
+            }
+
+
+            .result-content {
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    20px;
+            }
+
+
+            .score-section {
+
+                padding:
+                    18px 20px 0;
+            }
+
 
             .hero h1 {
-                letter-spacing: -1px;
+
+                letter-spacing:
+                    -1px;
             }
 
+        }
+
+
+        @media (max-width: 450px) {
+
+            .mode-buttons {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    36px;
+            }
+
+        }
+
+
+        /* =========================
+           SECURITY DASHBOARD
+        ========================= */
+
+        .dashboard {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .stat-card {
+            background: #070c12;
+            border: 1px solid var(--border);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--cyan);
+            opacity: .35;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 9px;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .stat-card.safe-stat .stat-value {
+            color: var(--green);
+        }
+
+        .stat-card.warning-stat .stat-value {
+            color: var(--yellow);
+        }
+
+        .stat-card.danger-stat .stat-value {
+            color: var(--red);
+        }
+
+        /* =========================
+           SCAN HISTORY
+        ========================= */
+
+        .history-panel {
+            margin-top: 28px;
+            background: rgba(10, 16, 24, 0.94);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .history-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 17px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .history-title {
+            color: var(--cyan);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .clear-history {
+            border: 1px solid var(--border);
+            background: #070c12;
+            color: var(--muted);
+            padding: 7px 10px;
+            font-family: inherit;
+            font-size: 9px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .clear-history:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .history-list {
+            max-height: 360px;
+            overflow-y: auto;
+        }
+
+        .history-empty {
+            padding: 28px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: .5px;
+        }
+
+        .history-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255,255,255,.035);
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-input {
+            color: #b7c3cd;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.45;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .history-meta {
+            color: var(--muted);
+            font-size: 9px;
+            white-space: nowrap;
+        }
+
+        .history-risk {
+            min-width: 92px;
+            text-align: center;
+            padding: 6px 8px;
+            border: 1px solid;
+            font-size: 9px;
+            letter-spacing: .5px;
+        }
+
+        .history-risk.safe {
+            color: var(--green);
+            border-color: rgba(0,255,157,.25);
+        }
+
+        .history-risk.suspicious {
+            color: var(--yellow);
+            border-color: rgba(255,196,0,.25);
+        }
+
+        .history-risk.scam {
+            color: var(--red);
+            border-color: rgba(255,59,92,.3);
+        }
+
+        /* =========================
+           WHY FLAGGED / TACTICS
+        ========================= */
+
+        .tactics-panel {
+            margin-top: 18px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.012);
+        }
+
+        .tactics-title {
+            color: var(--cyan);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .tactics-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tactic {
+            padding: 8px 10px;
+            border: 1px solid rgba(255,59,92,.25);
+            background: rgba(255,59,92,.035);
+            color: #c3cdd5;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+        }
+
+        .report-actions {
+            display: flex;
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .report-button {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--border);
+            background: #070c12;
+            color: var(--muted-light);
+            font-family: inherit;
+            font-size: 9px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .report-button:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        @media (max-width: 700px) {
+            .dashboard {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .history-item {
+                grid-template-columns: 1fr auto;
+            }
+
+            .history-meta {
+                grid-column: 1;
+            }
+
+            .history-risk {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .dashboard {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .report-actions {
+                flex-direction: column;
+            }
         }
 
     </style>
@@ -827,6 +1714,10 @@
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
@@ -858,136 +1749,170 @@
 <main class="container">
 
 
-    <section class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-        <div class="terminal-label">
-            // THREAT DETECTION SYSTEM
+<section class="hero">
+
+    <div class="terminal-label">
+        // THREAT DETECTION SYSTEM
+    </div>
+
+    <h1>
+        Detect <span>Scams</span> Before They Harm You
+    </h1>
+
+    <p>
+        Analyze suspicious messages and URLs using
+        rule-based threat detection and AI-assisted analysis.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     SCANNER
+========================= -->
+
+<section class="scanner">
+
+
+    <div class="scanner-header">
+
+        <div class="window-buttons">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
         </div>
 
-        <h1>
-            Detect <span>Scams</span> Before They Harm You
-        </h1>
 
-        <p>
-            Analyze suspicious messages and URLs using
-            rule-based threat detection and AI-assisted analysis.
-        </p>
-
-    </section>
-
-
-
-    <section class="scanner">
-
-
-        <div class="scanner-header">
-
-            <div class="window-buttons">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div>
-                SCAMSHIELD // ANALYSIS TERMINAL
-            </div>
-
-            <div>
-                v1.0
-            </div>
-
+        <div>
+            SCAMSHIELD // ANALYSIS TERMINAL
         </div>
 
 
+        <div>
+            v1.0
+        </div>
 
-        <div class="scanner-body">
-
-
-            <div class="mode-buttons">
-
-                <button
-                    type="button"
-                    id="messageMode"
-                    onclick="setMode('message')">
-
-                    ◉ MESSAGE ANALYSIS
-
-                </button>
-
-
-                <button
-                    type="button"
-                    id="urlMode"
-                    onclick="setMode('url')">
-
-                    ◇ URL ANALYSIS
-
-                </button>
-
-            </div>
+    </div>
 
 
 
-            <div class="input-label">
-                > INPUT DATA
-            </div>
+    <div class="scanner-body">
 
 
-            <textarea
-                id="inputText"
-                rows="8"
-                placeholder="Paste suspicious message here..."></textarea>
+        <!-- MODES -->
 
-
+        <div class="mode-buttons">
 
             <button
-                class="analyze-button"
-                onclick="analyze()">
+                type="button"
+                id="messageMode"
+                onclick="setMode('message')">
 
-                [ RUN THREAT ANALYSIS ]
+                ◉ MESSAGE ANALYSIS
 
             </button>
 
 
+            <button
+                type="button"
+                id="urlMode"
+                onclick="setMode('url')">
 
-            <!-- RESULT -->
+                ◇ URL ANALYSIS
 
-            <div
-                class="result-box"
-                id="resultBox">
+            </button>
 
-
-                <div class="result-top">
+        </div>
 
 
-                    <div class="result-status">
 
-                        <div
-                            id="riskIndicator"
-                            class="risk-indicator">
-                        </div>
+        <!-- INPUT -->
 
+        <div class="input-label">
+            > INPUT DATA
+        </div>
+
+
+        <textarea
+            id="inputText"
+            rows="8"
+            placeholder="Paste suspicious message here..."></textarea>
+
+
+
+        <button
+            class="analyze-button"
+            onclick="analyze()">
+
+            [ RUN THREAT ANALYSIS ]
+
+        </button>
+
+
+
+        <!-- =========================
+             RESULT
+        ========================= -->
+
+        <div
+            class="result-box"
+            id="resultBox">
+
+
+            <!-- STATUS -->
+
+            <div class="result-top">
+
+
+                <div class="result-status">
+
+                    <div
+                        id="riskIndicator"
+                        class="risk-indicator">
+                    </div>
+
+
+                    <div>
 
                         <h2 id="result">
                             ANALYSIS COMPLETE
                         </h2>
 
-                    </div>
 
-
-                    <div class="score-number">
-
-                        RISK SCORE
-
-                        <strong>
-                            <span id="scoreValue">0</span>/100
-                        </strong>
+                        <div id="riskDescription">
+                            Waiting for analysis...
+                        </div>
 
                     </div>
 
                 </div>
 
 
+
+                <div class="score-number">
+
+                    RISK SCORE
+
+                    <strong>
+                        <span id="scoreValue">0</span>
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SCORE BAR -->
+
+            <div class="score-section">
 
                 <div class="score-bar">
 
@@ -995,9 +1920,18 @@
 
                 </div>
 
+            </div>
 
 
-                <div class="reasons">
+
+            <!-- RESULT CONTENT -->
+
+            <div class="result-content">
+
+
+                <!-- INDICATORS -->
+
+                <div class="result-section reasons">
 
                     <div class="section-title">
                         // DETECTED INDICATORS
@@ -1009,16 +1943,22 @@
 
 
 
-                <div class="safety-advice">
+                <!-- SAFETY -->
 
-                    <h3>
-                        // SAFETY PROTOCOL
-                    </h3>
+                <div class="result-section">
 
-                    <p id="safetyAdvice">
-                        Always verify suspicious messages
-                        before taking action.
-                    </p>
+                    <div class="safety-advice">
+
+                        <h3>
+                            // SAFETY PROTOCOL
+                        </h3>
+
+                        <p id="safetyAdvice">
+                            Always verify suspicious messages
+                            before taking action.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -1026,52 +1966,167 @@
             </div>
 
 
+            <!-- =========================
+                 SCAM TACTICS
+            ========================= -->
 
-            <!-- AI -->
+            <div class="tactics-panel">
 
-            <div
-                class="ai-analysis"
-                id="aiPanel"
-                style="display:none;">
-
-                <h3>
-                    🤖 AI THREAT ANALYSIS
-                </h3>
-
-                <div id="aiAnalysis">
-                    AI analysis will appear here.
+                <div class="tactics-title">
+                    // DETECTED SCAM TACTICS
                 </div>
+
+                <div class="tactics-grid" id="tacticsList">
+                    <div class="tactic">Analysis pending</div>
+                </div>
+
+                <div class="report-actions">
+
+                    <button
+                        type="button"
+                        class="report-button"
+                        onclick="copyReport()">
+                        COPY SECURITY REPORT
+                    </button>
+
+                    <button
+                        type="button"
+                        class="report-button"
+                        onclick="downloadReport()">
+                        DOWNLOAD REPORT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- =========================
+             AI ANALYSIS
+        ========================= -->
+
+        <div
+            class="ai-analysis"
+            id="aiPanel">
+
+
+            <h3>
+                🤖 AI THREAT ANALYSIS
+            </h3>
+
+
+            <div id="aiAnalysis">
+
+                AI analysis will appear here.
 
             </div>
 
 
         </div>
 
-    </section>
-
-
-
-    <div class="footer">
-
-        SCAMSHIELD // CYBERSECURITY ANALYSIS TOOL
-
-        <br>
-
-        Risk assessment only — results do not guarantee
-        that a message or URL is safe.
 
     </div>
+
+</section>
+
+
+
+        <!-- =========================
+             SECURITY DASHBOARD
+        ========================= -->
+
+        <section class="dashboard" aria-label="Security overview">
+
+            <div class="stat-card">
+                <div class="stat-label">TOTAL SCANS</div>
+                <div class="stat-value" id="totalScans">0</div>
+            </div>
+
+            <div class="stat-card safe-stat">
+                <div class="stat-label">SAFE</div>
+                <div class="stat-value" id="safeScans">0</div>
+            </div>
+
+            <div class="stat-card warning-stat">
+                <div class="stat-label">SUSPICIOUS</div>
+                <div class="stat-value" id="suspiciousScans">0</div>
+            </div>
+
+            <div class="stat-card danger-stat">
+                <div class="stat-label">SCAMS DETECTED</div>
+                <div class="stat-value" id="scamScans">0</div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCAN HISTORY
+        ========================= -->
+
+        <section class="history-panel">
+
+            <div class="history-header">
+
+                <div class="history-title">
+                    // SCAN HISTORY
+                </div>
+
+                <button
+                    type="button"
+                    class="clear-history"
+                    onclick="clearHistory()">
+                    CLEAR HISTORY
+                </button>
+
+            </div>
+
+            <div class="history-list" id="historyList">
+
+                <div class="history-empty">
+                    No scans recorded yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+    SCAMSHIELD // CYBERSECURITY ANALYSIS TOOL
+
+    <br>
+
+    Risk assessment only — results do not guarantee
+    that a message or URL is safe.
+
+</div>
 
 
 </main>
 
 
 
+
 <script>
 
-
 let currentMode = "message";
+let lastScan = null;
 
+const HISTORY_KEY = "scamshield_scan_history_v1";
+
+
+/* =========================
+   MODE SWITCH
+========================= */
 
 function setMode(mode) {
 
@@ -1086,7 +2141,6 @@ function setMode(mode) {
     const input =
         document.getElementById("inputText");
 
-
     messageButton.classList.toggle(
         "active",
         mode === "message"
@@ -1097,89 +2151,564 @@ function setMode(mode) {
         mode === "url"
     );
 
-
     input.placeholder =
         mode === "message"
             ? "Paste suspicious message here..."
             : "Paste suspicious URL here...";
 
-
-    document.getElementById("resultBox").style.display =
-        "none";
-
-    document.getElementById("aiPanel").style.display =
-        "none";
+    document.getElementById("resultBox").style.display = "none";
+    document.getElementById("aiPanel").style.display = "none";
 }
 
 
+/* =========================
+   HISTORY
+========================= */
 
-async function analyze() {
+function getHistory() {
 
-    const input =
-        document.getElementById("inputText").value.trim();
+    try {
+        return JSON.parse(
+            localStorage.getItem(HISTORY_KEY) || "[]"
+        );
+    } catch {
+        return [];
+    }
+}
 
 
-    if (input === "") {
+function saveHistory(scan) {
 
-        alert("Please enter a message or URL.");
+    const history = getHistory();
+
+    history.unshift(scan);
+
+    // Keep the most recent 20 scans.
+    localStorage.setItem(
+        HISTORY_KEY,
+        JSON.stringify(history.slice(0, 20))
+    );
+
+    renderHistory();
+    updateDashboard();
+}
+
+
+function clearHistory() {
+
+    if (!getHistory().length) {
+        return;
+    }
+
+    if (
+        confirm(
+            "Clear all ScamShield scan history?"
+        )
+    ) {
+
+        localStorage.removeItem(HISTORY_KEY);
+
+        renderHistory();
+        updateDashboard();
+    }
+}
+
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+function getRiskClass(result) {
+
+    if (result === "Likely Scam") {
+        return "scam";
+    }
+
+    if (result === "Suspicious") {
+        return "suspicious";
+    }
+
+    return "safe";
+}
+
+
+function renderHistory() {
+
+    const list =
+        document.getElementById("historyList");
+
+    const history = getHistory();
+
+    if (!history.length) {
+
+        list.innerHTML = `
+            <div class="history-empty">
+                No scans recorded yet.
+            </div>
+        `;
 
         return;
     }
 
+    list.innerHTML = history.map(scan => {
+
+        const riskClass =
+            getRiskClass(scan.result);
+
+        const type =
+            scan.mode === "url"
+                ? "URL"
+                : "MESSAGE";
+
+        return `
+            <div class="history-item">
+
+                <div class="history-input">
+                    [${type}] ${escapeHTML(scan.input)}
+                </div>
+
+                <div class="history-meta">
+                    ${escapeHTML(scan.time)}
+                </div>
+
+                <div class="history-risk ${riskClass}">
+                    ${escapeHTML(scan.result)}
+                    · ${scan.score}/100
+                </div>
+
+            </div>
+        `;
+
+    }).join("");
+}
+
+
+function updateDashboard() {
+
+    const history = getHistory();
+
+    const total =
+        history.length;
+
+    const safe =
+        history.filter(
+            scan => scan.result === "Safe"
+        ).length;
+
+    const suspicious =
+        history.filter(
+            scan => scan.result === "Suspicious"
+        ).length;
+
+    const scams =
+        history.filter(
+            scan => scan.result === "Likely Scam"
+        ).length;
+
+    document.getElementById(
+        "totalScans"
+    ).textContent = total;
+
+    document.getElementById(
+        "safeScans"
+    ).textContent = safe;
+
+    document.getElementById(
+        "suspiciousScans"
+    ).textContent = suspicious;
+
+    document.getElementById(
+        "scamScans"
+    ).textContent = scams;
+}
+
+
+/* =========================
+   SCAM TACTIC CLASSIFIER
+========================= */
+
+function classifyTactics(reasons, input, mode) {
+
+    const text =
+        (input || "").toLowerCase();
+
+    const combined =
+        (reasons || []).join(" ").toLowerCase();
+
+    const tactics = [];
+
+    function addTactic(name) {
+
+        if (!tactics.includes(name)) {
+            tactics.push(name);
+        }
+    }
+
+    if (
+        combined.includes("urgency") ||
+        text.includes("urgent") ||
+        text.includes("immediately") ||
+        text.includes("act now")
+    ) {
+        addTactic("Urgency Manipulation");
+    }
+
+    if (
+        combined.includes("account threat") ||
+        text.includes("suspended") ||
+        text.includes("blocked") ||
+        text.includes("locked")
+    ) {
+        addTactic("Account Threat");
+    }
+
+    if (
+        combined.includes("otp") ||
+        text.includes("otp") ||
+        text.includes("one time password")
+    ) {
+        addTactic("Credential / OTP Theft");
+    }
+
+    if (
+        combined.includes("password") ||
+        combined.includes("pin") ||
+        combined.includes("card information") ||
+        text.includes("password") ||
+        text.includes("cvv")
+    ) {
+        addTactic("Sensitive Information Theft");
+    }
+
+    if (
+        combined.includes("verification") ||
+        text.includes("verify") ||
+        text.includes("confirm your identity")
+    ) {
+        addTactic("Fake Verification");
+    }
+
+    if (
+        combined.includes("payment") ||
+        combined.includes("money") ||
+        text.includes("upi") ||
+        text.includes("transfer")
+    ) {
+        addTactic("Payment Fraud");
+    }
+
+    if (
+        combined.includes("prize") ||
+        combined.includes("reward") ||
+        text.includes("lottery") ||
+        text.includes("you won")
+    ) {
+        addTactic("Prize / Reward Scam");
+    }
+
+    if (
+        combined.includes("impersonation") ||
+        text.includes("bank support") ||
+        text.includes("customer care") ||
+        text.includes("government")
+    ) {
+        addTactic("Organization Impersonation");
+    }
+
+    if (mode === "url") {
+
+        if (
+            combined.includes("shortener") ||
+            /bit\.ly|tinyurl\.com|t\.co/i.test(text)
+        ) {
+            addTactic("URL Shortening");
+        }
+
+        if (
+            combined.includes("ip address") ||
+            /^\s*https?:\/\/\d{1,3}(\.\d{1,3}){3}/i.test(text)
+        ) {
+            addTactic("IP-Based URL");
+        }
+
+        if (
+            combined.includes("suspicious domain extension") ||
+            /\.(xyz|top|click|shop|online|live|buzz)(\/|$)/i.test(text)
+        ) {
+            addTactic("Suspicious Domain");
+        }
+
+        if (
+            combined.includes("subdomain")
+        ) {
+            addTactic("Complex Subdomain");
+        }
+    }
+
+    if (!tactics.length) {
+        addTactic(
+            "No Major Scam Tactic Detected"
+        );
+    }
+
+    return tactics;
+}
+
+
+function renderTactics(reasons, input, mode) {
+
+    const list =
+        document.getElementById("tacticsList");
+
+    const tactics =
+        classifyTactics(
+            reasons,
+            input,
+            mode
+        );
+
+    list.innerHTML =
+        tactics.map(
+            tactic =>
+                `<div class="tactic">${escapeHTML(tactic)}</div>`
+        ).join("");
+}
+
+
+/* =========================
+   REPORT
+========================= */
+
+function buildReport() {
+
+    if (!lastScan) {
+        return "No completed scan available.";
+    }
+
+    const lines = [
+        "SCAMSHIELD SECURITY REPORT",
+        "==========================",
+        "",
+        "Scan Type: " +
+            (
+                lastScan.mode === "url"
+                    ? "URL"
+                    : "Message"
+            ),
+        "",
+        "Input:",
+        lastScan.input,
+        "",
+        "Risk Level: " +
+            lastScan.result,
+        "Risk Score: " +
+            lastScan.score +
+            "/100",
+        "",
+        "Detected Indicators:"
+    ];
+
+    if (
+        lastScan.reasons &&
+        lastScan.reasons.length
+    ) {
+
+        lastScan.reasons.forEach(
+            reason => {
+                lines.push(
+                    "- " + reason
+                );
+            }
+        );
+
+    } else {
+
+        lines.push(
+            "- No major suspicious indicators detected."
+        );
+    }
+
+    lines.push(
+        "",
+        "Detected Scam Tactics:"
+    );
+
+    (lastScan.tactics || []).forEach(
+        tactic => {
+            lines.push(
+                "- " + tactic
+            );
+        }
+    );
+
+    lines.push(
+        "",
+        "Recommendation:",
+        lastScan.advice,
+        "",
+        "Generated by ScamShield."
+    );
+
+    return lines.join("\n");
+}
+
+
+async function copyReport() {
+
+    if (!lastScan) {
+        alert(
+            "Run a scan before generating a report."
+        );
+        return;
+    }
+
+    const report =
+        buildReport();
+
+    try {
+
+        await navigator.clipboard.writeText(
+            report
+        );
+
+        alert(
+            "Security report copied to clipboard."
+        );
+
+    } catch {
+
+        alert(
+            "Unable to copy the report."
+        );
+    }
+}
+
+
+function downloadReport() {
+
+    if (!lastScan) {
+        alert(
+            "Run a scan before downloading a report."
+        );
+        return;
+    }
+
+    const report =
+        buildReport();
+
+    const blob =
+        new Blob(
+            [report],
+            {
+                type: "text/plain"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const link =
+        document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+        "ScamShield-Security-Report.txt";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+    URL.revokeObjectURL(url);
+}
+
+
+/* =========================
+   ANALYZE
+========================= */
+
+async function analyze() {
+
+    const input =
+        document
+            .getElementById("inputText")
+            .value
+            .trim();
+
+    if (input === "") {
+
+        alert(
+            "Please enter a message or URL."
+        );
+
+        return;
+    }
 
     const aiPanel =
-        document.getElementById("aiPanel");
+        document.getElementById(
+            "aiPanel"
+        );
 
     const aiAnalysis =
-        document.getElementById("aiAnalysis");
+        document.getElementById(
+            "aiAnalysis"
+        );
 
     const resultBox =
-        document.getElementById("resultBox");
+        document.getElementById(
+            "resultBox"
+        );
 
-
-    // IMPORTANT: correct class name
     const analyzeButton =
-        document.querySelector(".analyze-button");
+        document.querySelector(
+            ".analyze-button"
+        );
 
 
-    // Show scanning animation
+    /* SCANNING STATE */
 
     analyzeButton.disabled = true;
 
     analyzeButton.innerHTML =
         "[ ◉ SCANNING FOR THREATS... ]";
 
-
-    aiPanel.style.display = "block";
-
+    aiPanel.style.display =
+        "block";
 
     aiAnalysis.innerHTML = `
-
         <div class="ai-loading">
-
             SCANNING THREAT DATABASE
-
             <span class="loading-dot"></span>
             <span class="loading-dot"></span>
             <span class="loading-dot"></span>
-
         </div>
-
     `;
 
+    resultBox.style.display =
+        "none";
 
-    resultBox.style.display = "none";
-
-
-    // Small scanning delay
 
     await new Promise(
-        resolve => setTimeout(resolve, 1200)
+        resolve =>
+            setTimeout(
+                resolve,
+                1200
+            )
     );
 
 
-    let endpoint;
+    /* API ENDPOINT */
 
+    let endpoint;
 
     if (currentMode === "url") {
 
@@ -1187,13 +2716,11 @@ async function analyze() {
             "https://scamshield-api-5pj5.onrender.com/analyze/url?url=" +
             encodeURIComponent(input);
 
-    }
-    else {
+    } else {
 
         endpoint =
             "https://scamshield-api-5pj5.onrender.com/analyze/message?message=" +
             encodeURIComponent(input);
-
     }
 
 
@@ -1214,7 +2741,6 @@ async function analyze() {
                 "Server returned " +
                 response.status
             );
-
         }
 
 
@@ -1222,11 +2748,13 @@ async function analyze() {
             await response.json();
 
 
-        // Show result
+        /* SHOW RESULT */
 
         resultBox.style.display =
             "block";
 
+
+        /* RESULT */
 
         document.getElementById(
             "result"
@@ -1234,7 +2762,38 @@ async function analyze() {
             data.result;
 
 
-        // Risk score
+        /* DESCRIPTION */
+
+        const riskDescription =
+            document.getElementById(
+                "riskDescription"
+            );
+
+
+        if (
+            data.result ===
+            "Likely Scam"
+        ) {
+
+            riskDescription.textContent =
+                "High-risk indicators detected. Avoid interacting with this message or URL.";
+
+        } else if (
+            data.result ===
+            "Suspicious"
+        ) {
+
+            riskDescription.textContent =
+                "Some suspicious indicators were detected. Verify the source before taking action.";
+
+        } else {
+
+            riskDescription.textContent =
+                "No major suspicious indicators were detected.";
+        }
+
+
+        /* SCORE */
 
         document.getElementById(
             "scoreValue"
@@ -1242,7 +2801,7 @@ async function analyze() {
             data.risk_score;
 
 
-        // Result styling
+        /* RESULT STYLE */
 
         resultBox.className =
             "result-box";
@@ -1263,8 +2822,7 @@ async function analyze() {
             color =
                 "#ff3b5c";
 
-        }
-        else if (
+        } else if (
             data.result ===
             "Suspicious"
         ) {
@@ -1276,8 +2834,7 @@ async function analyze() {
             color =
                 "#ffc400";
 
-        }
-        else {
+        } else {
 
             resultBox.classList.add(
                 "safe"
@@ -1285,33 +2842,29 @@ async function analyze() {
 
             color =
                 "#00ff9d";
-
         }
 
 
-        // Score bar
+        /* SCORE BAR */
 
         const scoreFill =
             document.getElementById(
                 "scoreFill"
             );
 
-
         scoreFill.style.width =
             data.risk_score + "%";
-
 
         scoreFill.style.background =
             color;
 
 
-        // Risk indicator
+        /* RISK INDICATOR */
 
         const riskIndicator =
             document.getElementById(
                 "riskIndicator"
             );
-
 
         riskIndicator.style.background =
             color;
@@ -1320,13 +2873,12 @@ async function analyze() {
             color;
 
 
-        // Reasons
+        /* REASONS */
 
         const reasonsList =
             document.getElementById(
                 "reasons"
             );
-
 
         reasonsList.innerHTML =
             "";
@@ -1345,45 +2897,37 @@ async function analyze() {
                             "li"
                         );
 
-
                     item.textContent =
                         reason;
-
 
                     reasonsList.appendChild(
                         item
                     );
-
                 }
             );
 
-        }
-        else {
+        } else {
 
             const item =
                 document.createElement(
                     "li"
                 );
 
-
             item.textContent =
                 "No major suspicious indicators detected.";
-
 
             reasonsList.appendChild(
                 item
             );
-
         }
 
 
-        // Safety advice
+        /* SAFETY ADVICE */
 
         const safetyAdvice =
             document.getElementById(
                 "safetyAdvice"
             );
-
 
         if (
             data.result ===
@@ -1393,8 +2937,7 @@ async function analyze() {
             safetyAdvice.textContent =
                 "Do not share OTPs, passwords, PINs, payment details, or other sensitive information. Verify the sender through an official channel.";
 
-        }
-        else if (
+        } else if (
             data.result ===
             "Suspicious"
         ) {
@@ -1402,70 +2945,84 @@ async function analyze() {
             safetyAdvice.textContent =
                 "Proceed carefully. Verify the sender and avoid clicking unknown links or sharing sensitive information.";
 
-        }
-        else {
+        } else {
 
             safetyAdvice.textContent =
                 "No major warning signs were detected. However, always verify unexpected requests before taking action.";
-
         }
 
 
-        // AI analysis
+        /* TACTICS */
+
+        const tactics =
+            classifyTactics(
+                data.reasons || [],
+                input,
+                currentMode
+            );
+
+        renderTactics(
+            data.reasons || [],
+            input,
+            currentMode
+        );
+
+
+        /* SAVE LAST SCAN */
+
+        lastScan = {
+            mode: currentMode,
+            input: input,
+            result: data.result,
+            score: data.risk_score,
+            reasons: data.reasons || [],
+            tactics: tactics,
+            advice: safetyAdvice.textContent,
+            time: new Date().toLocaleString()
+        };
+
+        saveHistory(lastScan);
+
+
+        /* AI ANALYSIS */
 
         if (
             currentMode === "message" &&
             data.ai_analysis
         ) {
 
-            aiAnalysis.innerHTML =
-                data.ai_analysis
-                    .replace(
-                        /\*\*(.*?)\*\*/g,
-                        "<strong>$1</strong>"
-                    )
-                    .replace(
-                        /^### (.*)$/gm,
-                        "<h4>$1</h4>"
-                    )
-                    .replace(
-                        /^\* (.*)$/gm,
-                        "› $1"
-                    )
-                    .replace(
-                        /\n/g,
-                        "<br>"
-                    );
+            /*
+             * Keep the AI response as text rather than
+             * interpreting arbitrary model output as HTML.
+             */
+            aiAnalysis.textContent =
+                data.ai_analysis;
 
-        }
-        else if (
+        } else if (
             currentMode === "url"
         ) {
 
-            aiAnalysis.innerHTML =
+            aiAnalysis.textContent =
                 "URL analysis is currently based on ScamShield's rule-based threat detection engine.";
 
-        }
-        else {
+        } else {
 
-            aiAnalysis.innerHTML =
+            aiAnalysis.textContent =
                 "AI analysis was not required for this result. The assessment was completed using ScamShield's rule-based detection engine.";
-
         }
-
 
     }
+
+
     catch (error) {
 
         aiPanel.style.display =
             "block";
 
-
         aiAnalysis.innerHTML =
             `<span style="color:#ff3b5c;">
-                CONNECTION ERROR // ${error.message}
+                CONNECTION ERROR // ${escapeHTML(error.message)}
             </span>`;
-
 
         console.error(
             "ScamShield error:",
@@ -1480,18 +3037,23 @@ async function analyze() {
         analyzeButton.disabled =
             false;
 
-
         analyzeButton.innerHTML =
             "[ RUN THREAT ANALYSIS ]";
-
     }
-
 }
 
 
+/* =========================
+   INITIAL STATE
+========================= */
+
 setMode("message");
+renderHistory();
+updateDashboard();
 
 </script>
+
+
 
 </body>
 
