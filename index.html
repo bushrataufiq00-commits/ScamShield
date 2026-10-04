@@ -1457,6 +1457,86 @@
         }
 
 
+
+        /* =========================
+           URL INTELLIGENCE
+        ========================= */
+
+        .url-intelligence {
+            margin-top: 22px;
+            background: rgba(10, 16, 24, 0.94);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: none;
+        }
+
+        .url-intelligence-header {
+            padding: 17px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .url-intelligence-title {
+            color: var(--cyan);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .url-intelligence-subtitle {
+            color: var(--muted);
+            font-size: 9px;
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .url-intelligence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .url-intel-item {
+            background: #070c12;
+            padding: 14px 16px;
+            min-width: 0;
+        }
+
+        .url-intel-label {
+            color: var(--muted);
+            font-size: 8px;
+            letter-spacing: 1.1px;
+            margin-bottom: 7px;
+        }
+
+        .url-intel-value {
+            color: var(--text);
+            font-size: 11px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .url-intel-value.good {
+            color: var(--green);
+        }
+
+        .url-intel-value.warn {
+            color: var(--yellow);
+        }
+
+        .url-intel-value.bad {
+            color: var(--red);
+        }
+
+        .url-intel-value.neutral {
+            color: var(--cyan);
+        }
+
+        @media (max-width: 700px) {
+            .url-intelligence-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* =========================
            SECURITY DASHBOARD
         ========================= */
@@ -1707,6 +1787,214 @@
             }
         }
 
+
+        /* =========================
+           ALL-IN-ONE ENHANCEMENTS
+        ========================= */
+
+        .input-tools {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tool-group {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .mini-button {
+            border: 1px solid var(--border);
+            background: #070c12;
+            color: var(--muted);
+            padding: 7px 10px;
+            font-family: inherit;
+            font-size: 8px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .mini-button:hover {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        .char-counter {
+            color: var(--muted);
+            font-size: 8px;
+            letter-spacing: .6px;
+        }
+
+        .demo-panel,
+        .tips-panel,
+        .how-panel,
+        .system-panel {
+            margin-top: 28px;
+            background: rgba(10,16,24,.94);
+            border: 1px solid var(--border);
+        }
+
+        .info-header {
+            padding: 17px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-title {
+            color: var(--cyan);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .info-subtitle {
+            color: var(--muted);
+            font-size: 9px;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+
+        .demo-body,
+        .tips-body,
+        .how-body,
+        .system-body {
+            padding: 18px 20px;
+        }
+
+        .demo-grid,
+        .tips-grid,
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .demo-card,
+        .tip-card,
+        .how-card {
+            border: 1px solid var(--border);
+            background: #070c12;
+            padding: 14px;
+        }
+
+        .demo-card strong,
+        .tip-card strong,
+        .how-card strong {
+            display: block;
+            color: var(--text);
+            font-size: 10px;
+            letter-spacing: .7px;
+            margin-bottom: 7px;
+        }
+
+        .demo-card p,
+        .tip-card p,
+        .how-card p {
+            color: var(--muted);
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            line-height: 1.55;
+        }
+
+        .demo-card button {
+            margin-top: 11px;
+            width: 100%;
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .system-item {
+            border: 1px solid var(--border);
+            padding: 13px;
+            background: #070c12;
+        }
+
+        .system-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 8px;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .system-item strong {
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+        }
+
+        .dashboard-extra {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .history-load {
+            border: 1px solid var(--border);
+            background: #070c12;
+            color: var(--cyan);
+            padding: 6px 8px;
+            font-family: inherit;
+            font-size: 8px;
+            letter-spacing: .7px;
+            cursor: pointer;
+        }
+
+        .history-load:hover {
+            border-color: var(--cyan);
+        }
+
+        .history-item {
+            grid-template-columns: minmax(0, 1fr) auto auto auto;
+        }
+
+        .print-button {
+            flex: 1;
+        }
+
+        .disclaimer {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 8px;
+            line-height: 1.6;
+        }
+
+        .scan-error {
+            margin-top: 16px;
+            border: 1px solid rgba(255,59,92,.35);
+            background: rgba(255,59,92,.04);
+            color: #ff8094;
+            padding: 12px;
+            font-size: 9px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 700px) {
+            .demo-grid,
+            .tips-grid,
+            .how-grid,
+            .system-grid,
+            .dashboard-extra {
+                grid-template-columns: 1fr;
+            }
+
+            .history-item {
+                grid-template-columns: 1fr auto;
+            }
+
+            .history-load {
+                grid-column: 1 / -1;
+            }
+        }
+
     </style>
 
 </head>
@@ -1843,7 +2131,25 @@
         <textarea
             id="inputText"
             rows="8"
+            maxlength="5000"
             placeholder="Paste suspicious message here..."></textarea>
+
+        <div class="input-tools">
+
+            <div class="tool-group">
+                <button type="button" class="mini-button" onclick="loadDemo('current')">
+                    LOAD DEMO
+                </button>
+                <button type="button" class="mini-button" onclick="clearInput()">
+                    CLEAR INPUT
+                </button>
+            </div>
+
+            <div class="char-counter" id="charCounter">
+                0 / 5000
+            </div>
+
+        </div>
 
 
 
@@ -1996,6 +2302,13 @@
                         DOWNLOAD REPORT
                     </button>
 
+                    <button
+                        type="button"
+                        class="report-button print-button"
+                        onclick="printReport()">
+                        PRINT REPORT
+                    </button>
+
                 </div>
 
             </div>
@@ -2004,6 +2317,69 @@
 
         </div>
 
+
+
+
+        <!-- =========================
+             URL INTELLIGENCE
+        ========================= -->
+
+        <div class="url-intelligence" id="urlIntelligence">
+
+            <div class="url-intelligence-header">
+                <div class="url-intelligence-title">
+                    // URL INTELLIGENCE
+                </div>
+                <div class="url-intelligence-subtitle">
+                    Structural analysis of the scanned URL. This does not confirm website ownership or reputation.
+                </div>
+            </div>
+
+            <div class="url-intelligence-grid">
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">PROTOCOL</div>
+                    <div class="url-intel-value" id="urlProtocol">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">HOST / DOMAIN</div>
+                    <div class="url-intel-value" id="urlHost">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">DOMAIN TYPE</div>
+                    <div class="url-intel-value" id="urlDomainType">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">PATH</div>
+                    <div class="url-intel-value" id="urlPath">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">SUBDOMAINS</div>
+                    <div class="url-intel-value" id="urlSubdomains">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">SHORTENER</div>
+                    <div class="url-intel-value" id="urlShortener">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">SUSPICIOUS KEYWORDS</div>
+                    <div class="url-intel-value" id="urlKeywords">—</div>
+                </div>
+
+                <div class="url-intel-item">
+                    <div class="url-intel-label">URL STRUCTURE</div>
+                    <div class="url-intel-value" id="urlStructure">—</div>
+                </div>
+
+            </div>
+
+        </div>
 
 
         <!-- =========================
@@ -2064,6 +2440,18 @@
 
         </section>
 
+        <section class="dashboard-extra" aria-label="Additional security statistics">
+            <div class="stat-card">
+                <div class="stat-label">AVERAGE RISK SCORE</div>
+                <div class="stat-value" id="averageScore">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">LAST SCAN</div>
+                <div class="stat-value" id="lastScanType">NONE</div>
+            </div>
+        </section>
+
 
         <!-- =========================
              SCAN HISTORY
@@ -2090,6 +2478,193 @@
 
                 <div class="history-empty">
                     No scans recorded yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DEMO / QUICK TESTS
+        ========================= -->
+
+        <section class="demo-panel">
+
+            <div class="info-header">
+                <div class="info-title">// QUICK DEMO MODE</div>
+                <div class="info-subtitle">
+                    Load safe and suspicious examples to demonstrate ScamShield during testing or a college presentation.
+                </div>
+            </div>
+
+            <div class="demo-body">
+
+                <div class="demo-grid">
+
+                    <div class="demo-card">
+                        <strong>MESSAGE DEMO</strong>
+                        <p>Loads a simulated urgent account-warning message containing common phishing indicators.</p>
+                        <button type="button" class="mini-button" onclick="loadDemo('message')">
+                            LOAD MESSAGE EXAMPLE
+                        </button>
+                    </div>
+
+                    <div class="demo-card">
+                        <strong>URL DEMO</strong>
+                        <p>Loads a simulated suspicious URL for structural analysis and risk scoring.</p>
+                        <button type="button" class="mini-button" onclick="loadDemo('url')">
+                            LOAD URL EXAMPLE
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================= -->
+
+        <section class="how-panel">
+
+            <div class="info-header">
+                <div class="info-title">// HOW SCAMSHIELD WORKS</div>
+                <div class="info-subtitle">
+                    A simple explanation you can use during your project presentation.
+                </div>
+            </div>
+
+            <div class="how-body">
+
+                <div class="how-grid">
+
+                    <div class="how-card">
+                        <strong>01 // INPUT</strong>
+                        <p>The user provides a suspicious message or URL for analysis.</p>
+                    </div>
+
+                    <div class="how-card">
+                        <strong>02 // RULE ENGINE</strong>
+                        <p>ScamShield checks for patterns such as urgency, account threats, OTP requests, payments, suspicious URLs and other indicators.</p>
+                    </div>
+
+                    <div class="how-card">
+                        <strong>03 // RISK SCORE</strong>
+                        <p>Detected indicators contribute to a score from 0 to 100 and produce Safe, Suspicious or Likely Scam.</p>
+                    </div>
+
+                    <div class="how-card">
+                        <strong>04 // AI ASSISTANCE</strong>
+                        <p>For uncertain message results, the backend can request a short Gemini-based explanation.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SAFETY TIPS
+        ========================= -->
+
+        <section class="tips-panel">
+
+            <div class="info-header">
+                <div class="info-title">// SAFETY PROTOCOLS</div>
+                <div class="info-subtitle">
+                    General precautions for suspicious messages and links.
+                </div>
+            </div>
+
+            <div class="tips-body">
+
+                <div class="tips-grid">
+
+                    <div class="tip-card">
+                        <strong>NEVER SHARE OTPs</strong>
+                        <p>Do not share OTPs, passwords, PINs or card security information with unexpected contacts.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>VERIFY THE SOURCE</strong>
+                        <p>Contact the organization through its official website or known contact method instead of using a suspicious message.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>CHECK THE URL</strong>
+                        <p>Look for HTTPS, unusual domains, excessive subdomains, IP addresses and unexpected URL structures.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>DON'T PANIC</strong>
+                        <p>Scammers often create urgency. Take time to verify a request before clicking, paying or responding.</p>
+                    </div>
+
+                </div>
+
+                <div class="disclaimer">
+                    ScamShield is an educational risk-assessment tool. A Safe result does not guarantee that content is legitimate, and a suspicious result is not proof of fraud.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SYSTEM INFORMATION
+        ========================= -->
+
+        <section class="system-panel">
+
+            <div class="info-header">
+                <div class="info-title">// SYSTEM INFORMATION</div>
+                <div class="info-subtitle">
+                    Current ScamShield architecture and feature status.
+                </div>
+            </div>
+
+            <div class="system-body">
+
+                <div class="system-grid">
+
+                    <div class="system-item">
+                        <span>FRONTEND</span>
+                        <strong>HTML / CSS / JavaScript</strong>
+                    </div>
+
+                    <div class="system-item">
+                        <span>BACKEND</span>
+                        <strong>Python / FastAPI</strong>
+                    </div>
+
+                    <div class="system-item">
+                        <span>AI ASSISTANCE</span>
+                        <strong>Gemini API</strong>
+                    </div>
+
+                    <div class="system-item">
+                        <span>DETECTION</span>
+                        <strong>Rule-based scoring</strong>
+                    </div>
+
+                    <div class="system-item">
+                        <span>HISTORY</span>
+                        <strong>Browser localStorage</strong>
+                    </div>
+
+                    <div class="system-item">
+                        <span>URL ANALYSIS</span>
+                        <strong>Structural intelligence</strong>
+                    </div>
+
                 </div>
 
             </div>
@@ -2158,6 +2733,7 @@ function setMode(mode) {
 
     document.getElementById("resultBox").style.display = "none";
     document.getElementById("aiPanel").style.display = "none";
+    document.getElementById("urlIntelligence").style.display = "none";
 }
 
 
@@ -2191,6 +2767,7 @@ function saveHistory(scan) {
 
     renderHistory();
     updateDashboard();
+    updateDashboardExtras();
 }
 
 
@@ -2210,6 +2787,7 @@ function clearHistory() {
 
         renderHistory();
         updateDashboard();
+        updateDashboardExtras();
     }
 }
 
@@ -2282,6 +2860,13 @@ function renderHistory() {
                     ${escapeHTML(scan.result)}
                     · ${scan.score}/100
                 </div>
+
+                <button
+                    type="button"
+                    class="history-load"
+                    onclick="loadHistoryScan(${index})">
+                    LOAD
+                </button>
 
             </div>
         `;
@@ -2632,6 +3217,279 @@ function downloadReport() {
 }
 
 
+
+/* =========================
+   URL INTELLIGENCE
+========================= */
+
+function setUrlIntel(id, value, type = "neutral") {
+
+    const element =
+        document.getElementById(id);
+
+    element.textContent = value;
+
+    element.className =
+        "url-intel-value " + type;
+}
+
+
+function renderUrlIntelligence(url) {
+
+    const panel =
+        document.getElementById(
+            "urlIntelligence"
+        );
+
+    if (currentMode !== "url") {
+
+        panel.style.display = "none";
+
+        return;
+    }
+
+    try {
+
+        let normalizedUrl = url.trim();
+
+        if (
+            !normalizedUrl.startsWith("http://") &&
+            !normalizedUrl.startsWith("https://")
+        ) {
+            normalizedUrl =
+                "https://" + normalizedUrl;
+        }
+
+        const parsed =
+            new URL(normalizedUrl);
+
+        const hostname =
+            parsed.hostname;
+
+        const protocol =
+            parsed.protocol.replace(
+                ":",
+                ""
+            ).toUpperCase();
+
+        const pathname =
+            parsed.pathname || "/";
+
+        const shorteners = [
+            "bit.ly",
+            "tinyurl.com",
+            "t.co",
+            "is.gd",
+            "ow.ly",
+            "buff.ly"
+        ];
+
+        const suspiciousKeywords = [
+            "verify",
+            "verification",
+            "login",
+            "secure",
+            "update",
+            "claim",
+            "gift",
+            "reward",
+            "password",
+            "account"
+        ];
+
+        const hostnameLower =
+            hostname.toLowerCase();
+
+        const fullUrlLower =
+            normalizedUrl.toLowerCase();
+
+        const foundKeywords =
+            suspiciousKeywords.filter(
+                word =>
+                    fullUrlLower.includes(word)
+            );
+
+        const isShortener =
+            shorteners.some(
+                domain =>
+                    hostnameLower === domain ||
+                    hostnameLower.endsWith("." + domain)
+            );
+
+        const isIPv4 =
+            /^\d{1,3}(\.\d{1,3}){3}$/.test(
+                hostname
+            );
+
+        const hostnameParts =
+            hostname.split(".");
+
+        let subdomainCount = 0;
+
+        if (!isIPv4 && hostnameParts.length > 2) {
+            subdomainCount =
+                hostnameParts.length - 2;
+        }
+
+        let domainType = "Standard domain";
+
+        if (isIPv4) {
+            domainType = "IP address";
+        } else if (hostnameLower.endsWith(".xyz")) {
+            domainType = ".xyz domain";
+        } else if (hostnameLower.endsWith(".top")) {
+            domainType = ".top domain";
+        } else if (hostnameLower.endsWith(".click")) {
+            domainType = ".click domain";
+        } else if (hostnameLower.endsWith(".shop")) {
+            domainType = ".shop domain";
+        } else if (hostnameLower.endsWith(".online")) {
+            domainType = ".online domain";
+        } else if (hostnameLower.endsWith(".live")) {
+            domainType = ".live domain";
+        } else if (hostnameLower.endsWith(".buzz")) {
+            domainType = ".buzz domain";
+        }
+
+        const suspiciousStructure =
+            isIPv4 ||
+            isShortener ||
+            parsed.username !== "" ||
+            hostnameParts.length >= 5 ||
+            foundKeywords.length >= 2;
+
+        setUrlIntel(
+            "urlProtocol",
+            protocol,
+            protocol === "HTTPS"
+                ? "good"
+                : "bad"
+        );
+
+        setUrlIntel(
+            "urlHost",
+            hostname,
+            isIPv4
+                ? "bad"
+                : "neutral"
+        );
+
+        setUrlIntel(
+            "urlDomainType",
+            domainType,
+            isIPv4 ||
+            domainType !== "Standard domain"
+                ? "warn"
+                : "neutral"
+        );
+
+        setUrlIntel(
+            "urlPath",
+            pathname,
+            pathname !== "/"
+                ? "neutral"
+                : "good"
+        );
+
+        setUrlIntel(
+            "urlSubdomains",
+            subdomainCount === 0
+                ? "None detected"
+                : subdomainCount + " detected",
+            subdomainCount >= 3
+                ? "warn"
+                : "neutral"
+        );
+
+        setUrlIntel(
+            "urlShortener",
+            isShortener
+                ? "Detected"
+                : "Not detected",
+            isShortener
+                ? "bad"
+                : "good"
+        );
+
+        setUrlIntel(
+            "urlKeywords",
+            foundKeywords.length
+                ? foundKeywords.join(", ")
+                : "None detected",
+            foundKeywords.length >= 2
+                ? "warn"
+                : "neutral"
+        );
+
+        setUrlIntel(
+            "urlStructure",
+            suspiciousStructure
+                ? "Review recommended"
+                : "No major structural warning",
+            suspiciousStructure
+                ? "warn"
+                : "good"
+        );
+
+        panel.style.display =
+            "block";
+
+    } catch (error) {
+
+        panel.style.display =
+            "block";
+
+        setUrlIntel(
+            "urlProtocol",
+            "Could not parse URL",
+            "bad"
+        );
+
+        setUrlIntel(
+            "urlHost",
+            "Invalid URL",
+            "bad"
+        );
+
+        setUrlIntel(
+            "urlDomainType",
+            "Unavailable",
+            "neutral"
+        );
+
+        setUrlIntel(
+            "urlPath",
+            "Unavailable",
+            "neutral"
+        );
+
+        setUrlIntel(
+            "urlSubdomains",
+            "Unavailable",
+            "neutral"
+        );
+
+        setUrlIntel(
+            "urlShortener",
+            "Unavailable",
+            "neutral"
+        );
+
+        setUrlIntel(
+            "urlKeywords",
+            "Unavailable",
+            "neutral"
+        );
+
+        setUrlIntel(
+            "urlStructure",
+            "Could not parse URL",
+            "bad"
+        );
+    }
+}
+
+
 /* =========================
    ANALYZE
 ========================= */
@@ -2650,6 +3508,13 @@ async function analyze() {
             "Please enter a message or URL."
         );
 
+        return;
+    }
+
+    if (input.length > 5000) {
+        alert(
+            "Input is too long. Please keep it under 5000 characters."
+        );
         return;
     }
 
@@ -2968,6 +3833,13 @@ async function analyze() {
         );
 
 
+        /* URL INTELLIGENCE */
+
+        renderUrlIntelligence(
+            input
+        );
+
+
         /* SAVE LAST SCAN */
 
         lastScan = {
@@ -3020,9 +3892,11 @@ async function analyze() {
             "block";
 
         aiAnalysis.innerHTML =
-            `<span style="color:#ff3b5c;">
+            `<div class="scan-error">
                 CONNECTION ERROR // ${escapeHTML(error.message)}
-            </span>`;
+                <br><br>
+                Make sure the ScamShield backend is online and try again.
+            </div>`;
 
         console.error(
             "ScamShield error:",
@@ -3043,6 +3917,237 @@ async function analyze() {
 }
 
 
+
+/* =========================
+   INPUT TOOLS
+========================= */
+
+function updateCharCounter() {
+
+    const input =
+        document.getElementById("inputText");
+
+    const counter =
+        document.getElementById("charCounter");
+
+    if (input && counter) {
+        counter.textContent =
+            input.value.length + " / 5000";
+    }
+}
+
+
+function clearInput() {
+
+    const input =
+        document.getElementById("inputText");
+
+    input.value = "";
+
+    updateCharCounter();
+
+    document.getElementById("resultBox").style.display = "none";
+    document.getElementById("aiPanel").style.display = "none";
+    document.getElementById("urlIntelligence").style.display = "none";
+
+    lastScan = null;
+}
+
+
+function loadDemo(type) {
+
+    const input =
+        document.getElementById("inputText");
+
+    if (type === "message") {
+        setMode("message");
+
+        input.value =
+            "URGENT! Your bank account has been suspended. Verify your identity immediately by sending your OTP to customer support.";
+    } else if (type === "url") {
+        setMode("url");
+
+        input.value =
+            "http://example.xyz/verify-account/login";
+    } else {
+        if (currentMode === "url") {
+            input.value =
+                "http://example.xyz/verify-account/login";
+        } else {
+            input.value =
+                "URGENT! Your account has been suspended. Verify immediately by sending your OTP.";
+        }
+    }
+
+    updateCharCounter();
+    input.focus();
+}
+
+
+function loadHistoryScan(index) {
+
+    const history = getHistory();
+    const scan = history[index];
+
+    if (!scan) {
+        return;
+    }
+
+    setMode(scan.mode);
+
+    const input =
+        document.getElementById("inputText");
+
+    input.value =
+        scan.input;
+
+    updateCharCounter();
+    input.focus();
+
+    window.scrollTo({
+        top: document.querySelector(".scanner").offsetTop - 20,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   PRINT REPORT
+========================= */
+
+function printReport() {
+
+    if (!lastScan) {
+        alert("Run a scan before printing a report.");
+        return;
+    }
+
+    const report = buildReport();
+
+    const printWindow =
+        window.open("", "_blank", "width=800,height=700");
+
+    if (!printWindow) {
+        alert("Please allow pop-ups to print the report.");
+        return;
+    }
+
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>ScamShield Security Report</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    padding: 40px;
+                    color: #111;
+                    line-height: 1.6;
+                }
+                h1 {
+                    margin-bottom: 5px;
+                }
+                pre {
+                    white-space: pre-wrap;
+                    font-family: Arial, sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>SCAMSHIELD SECURITY REPORT</h1>
+            <pre>${escapeHTML(report)}</pre>
+        </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+    printWindow.focus();
+
+    setTimeout(() => {
+        printWindow.print();
+    }, 250);
+}
+
+
+/* =========================
+   DASHBOARD ENHANCEMENT
+========================= */
+
+function updateDashboardExtras() {
+
+    const history = getHistory();
+
+    const averageElement =
+        document.getElementById("averageScore");
+
+    const lastTypeElement =
+        document.getElementById("lastScanType");
+
+    if (!averageElement || !lastTypeElement) {
+        return;
+    }
+
+    if (!history.length) {
+        averageElement.textContent = "0";
+        lastTypeElement.textContent = "NONE";
+        return;
+    }
+
+    const totalScore =
+        history.reduce(
+            (sum, scan) =>
+                sum + Number(scan.score || 0),
+            0
+        );
+
+    const average =
+        Math.round(totalScore / history.length);
+
+    averageElement.textContent =
+        average + "/100";
+
+    lastTypeElement.textContent =
+        history[0].mode === "url"
+            ? "URL"
+            : "MESSAGE";
+}
+
+
+/* =========================
+   CHARACTER COUNTER
+========================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const input =
+        document.getElementById("inputText");
+
+    if (input) {
+        input.addEventListener(
+            "input",
+            updateCharCounter
+        );
+    }
+
+    updateCharCounter();
+    updateDashboardExtras();
+
+});
+
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.ctrlKey &&
+        event.key === "Enter"
+    ) {
+        event.preventDefault();
+        analyze();
+    }
+
+});
+
 /* =========================
    INITIAL STATE
 ========================= */
@@ -3050,6 +4155,8 @@ async function analyze() {
 setMode("message");
 renderHistory();
 updateDashboard();
+updateDashboardExtras();
+updateCharCounter();
 
 </script>
 
