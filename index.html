@@ -1073,11 +1073,9 @@
 let currentMode = "message";
 
 
-
 function setMode(mode) {
 
     currentMode = mode;
-
 
     const messageButton =
         document.getElementById("messageMode");
@@ -1094,7 +1092,6 @@ function setMode(mode) {
         mode === "message"
     );
 
-
     urlButton.classList.toggle(
         "active",
         mode === "url"
@@ -1107,14 +1104,11 @@ function setMode(mode) {
             : "Paste suspicious URL here...";
 
 
-    // Clear previous result when switching modes
-
     document.getElementById("resultBox").style.display =
         "none";
 
     document.getElementById("aiPanel").style.display =
         "none";
-
 }
 
 
@@ -1124,12 +1118,14 @@ async function analyze() {
     const input =
         document.getElementById("inputText").value.trim();
 
+
     if (input === "") {
 
         alert("Please enter a message or URL.");
 
         return;
     }
+
 
     const aiPanel =
         document.getElementById("aiPanel");
@@ -1140,33 +1136,10 @@ async function analyze() {
     const resultBox =
         document.getElementById("resultBox");
 
+
+    // IMPORTANT: correct class name
     const analyzeButton =
-        document.querySelector(".analyze-btn");
-
-
-async function analyze() {
-
-    const input =
-        document.getElementById("inputText").value.trim();
-
-    if (input === "") {
-
-        alert("Please enter a message or URL.");
-
-        return;
-    }
-
-    const aiPanel =
-        document.getElementById("aiPanel");
-
-    const aiAnalysis =
-        document.getElementById("aiAnalysis");
-
-    const resultBox =
-        document.getElementById("resultBox");
-
-    const analyzeButton =
-        document.querySelector(".analyze-btn");
+        document.querySelector(".analyze-button");
 
 
     // Show scanning animation
@@ -1194,8 +1167,6 @@ async function analyze() {
 
     `;
 
-
-    // Hide previous result
 
     resultBox.style.display = "none";
 
@@ -1268,7 +1239,7 @@ async function analyze() {
         document.getElementById(
             "scoreValue"
         ).textContent =
-            data.risk_score + "/100";
+            data.risk_score;
 
 
         // Result styling
@@ -1344,7 +1315,6 @@ async function analyze() {
 
         riskIndicator.style.background =
             color;
-
 
         riskIndicator.style.color =
             color;
@@ -1483,9 +1453,8 @@ async function analyze() {
 
         }
 
+
     }
-
-
     catch (error) {
 
         aiPanel.style.display =
@@ -1508,8 +1477,6 @@ async function analyze() {
 
     finally {
 
-        // Restore button
-
         analyzeButton.disabled =
             false;
 
@@ -1523,8 +1490,6 @@ async function analyze() {
 
 
 setMode("message");
-
-}
 
 </script>
 
